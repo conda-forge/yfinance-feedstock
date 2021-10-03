@@ -45,4 +45,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - kc
+    - jan-janssen
+    # Organisations can't be maintainers on GitHub
+    # - kc
