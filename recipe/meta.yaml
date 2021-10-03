@@ -1,5 +1,5 @@
 {% set name = "yfinance" %}
-{% set version = "0.1.62" %}
+{% set version = "0.1.63" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yfinance-{{ version }}.tar.gz
-  sha256: 0356eaeef89ed225d272b16a0bb8393870cc68506f9aff545f9f030436044111
+  sha256: 11364fe94f1cf7811c45fc620acb61c8c45fcb88de317c7718bbdbc9c1573a4c
 
 build:
   number: 0
@@ -46,5 +46,3 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
-    # Organisations can't be maintainers on GitHub
-    # - kc
