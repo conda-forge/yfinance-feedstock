@@ -29,6 +29,7 @@ requirements:
     - python >=3.6
     - requests >=2.20
     - appdirs
+    - frozendict
 
 test:
   imports:
