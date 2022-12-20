@@ -30,6 +30,8 @@ requirements:
     - requests >=2.20
     - appdirs
     - frozendict
+    - beautifulsoup4
+    - html5lib
 
 test:
   imports:
