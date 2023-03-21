@@ -1,11 +1,11 @@
-About yfinance
-==============
+About yfinance-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/yfinance-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ranaroussi/yfinance
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/yfinance-feedstock/blob/main/LICENSE.txt)
 
 Summary: Yahoo! Finance market data downloader
 
