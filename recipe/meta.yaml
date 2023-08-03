@@ -1,5 +1,5 @@
 {% set name = "yfinance" %}
-{% set version = "0.2.26" %}
+{% set version = "0.2.27" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yfinance-{{ version }}.tar.gz
-  sha256: a3ca2218cc99ebf345c5cfe43f69e6d1a0d360cb3cd6e0cd8f5ff80f81ee069d
+  sha256: d5c057963f4f1842d65d28fb5444d0b45b8082988baa64e703b87c6454d88642
 
 build:
   number: 0
