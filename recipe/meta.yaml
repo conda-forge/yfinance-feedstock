@@ -15,7 +15,7 @@ build:
   noarch: python
   entry_points:
     - sample=sample: main  # [win]
-  script: {{ PYTHON }} -m pip install . -vv
+  script: mkdir -p /home/conda/.cache; {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
