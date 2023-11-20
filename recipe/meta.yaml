@@ -10,8 +10,6 @@ source:
   sha256: fed6e37702af75a6c07c8c2e1c56a5331a4d4f341634995ebc735f1df06ea543
 
 build:
-  entry_points:
-    - sample=sample:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 1
@@ -39,7 +37,6 @@ test:
     - yfinance
   commands:
     - pip check
-    - sample --help
   requires:
     - pip
 
