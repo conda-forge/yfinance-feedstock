@@ -1,7 +1,6 @@
 {% set name = "yfinance" %}
 {% set version = "0.2.32" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,42 +10,42 @@ source:
   sha256: fed6e37702af75a6c07c8c2e1c56a5331a4d4f341634995ebc735f1df06ea543
 
 build:
-  number: 0
-  noarch: python
   entry_points:
-    - sample=sample: main  # [win]
-  script: mkdir -p /home/conda/.cache; {{ PYTHON }} -m pip install . -vv
+    - sample=sample:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - pip
     - python >=3.6
+    - pip
   run:
     - python >=3.6
-    - appdirs >=1.4.4
-    - beautifulsoup4 >=4.11.1
-    - cryptography >=3.3.2
-    - frozendict >=2.3.4
-    - html5lib >=1.1
-    - lxml >=4.9.1
-    - multitasking >=0.0.7
-    - numpy >=1.16.5
     - pandas >=1.3.0
-    - peewee >=3.16.2
+    - numpy >=1.16.5
+    - requests >=2.31
+    - multitasking >=0.0.7
+    - lxml >=4.9.1
+    - appdirs >=1.4.4
     - pytz >=2022.5
-    - requests >=2.26
+    - frozendict >=2.3.4
+    - peewee >=3.16.2
+    - beautifulsoup4 >=4.11.1
+    - html5lib >=1.1
 
 test:
   imports:
     - yfinance
   commands:
     - pip check
+    - sample --help
   requires:
     - pip
 
 about:
   home: https://github.com/ranaroussi/yfinance
-  summary: Yahoo! Finance market data downloader
+  summary: Download market data from Yahoo! Finance API
   license: Apache-2.0
   license_file: LICENSE.txt
 
