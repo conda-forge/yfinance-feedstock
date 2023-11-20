@@ -7,7 +7,7 @@ Home: https://github.com/ranaroussi/yfinance
 
 Package license: Apache-2.0
 
-Summary: Yahoo! Finance market data downloader
+Summary: Download market data from Yahoo! Finance API
 
 Current build status
 ====================
