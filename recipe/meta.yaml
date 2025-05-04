@@ -20,7 +20,7 @@ requirements:
     - setuptools
     - pip
   run:
-    - curl_cffi >=0.7
+    - curl-cffi >=0.7
     - platformdirs >=2.0.0
     - python >={{ python_min }}
     - pandas >=1.3.0
