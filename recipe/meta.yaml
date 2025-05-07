@@ -1,5 +1,6 @@
 {% set name = "yfinance" %}
-{% set version = "0.2.58" %}
+{% set version = "0.2.59" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yfinance-{{ version }}.tar.gz
-  sha256: 4bf61714544aa57f82b9c157c17f40ede53ec70ce9a0ec170661a9cba737cbe2
+  sha256: 632a6dbf6f912a9ca27fd4677903bec779a527bf29a5f9889af845d73c5ab7f3
 
 build:
   noarch: python
@@ -20,6 +21,8 @@ requirements:
     - setuptools
     - pip
   run:
+    - protobuf >=5.29.0,<6
+    - websockets >=11.0
     - curl-cffi >=0.7
     - platformdirs >=2.0.0
     - python >={{ python_min }}
