@@ -1,5 +1,5 @@
 {% set name = "yfinance" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/yfinance-{{ version }}.tar.gz
-  sha256: c32c45b42480d64981e89d65da3f480fd6910fe1972d7e78f1e2d91b45d9ee1b
+  sha256: 442f780d13d3e52fefa6c721c2c9bfee321078c1987d6585ec193b5c24382f8a
 
 build:
   noarch: python
