@@ -1,22 +1,25 @@
-{% set name = "yfinance" %}
-{% set version = "1.7.0" %}
+schema_version: 1
+
+context:
+  name: yfinance
+  version: 1.7.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/yfinance-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/yfinance-${{ version }}.tar.gz
   sha256: 442f780d13d3e52fefa6c721c2c9bfee321078c1987d6585ec193b5c24382f8a
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - setuptools
     - pip
   run:
@@ -24,7 +27,7 @@ requirements:
     - websockets >=13.0
     - curl-cffi >=0.15
     - platformdirs >=2.0.0
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - pandas >=1.3.0
     - numpy >=1.16.5
     - requests >=2.31
@@ -37,20 +40,20 @@ requirements:
     - beautifulsoup4 >=4.11.1
     - html5lib >=1.1
 
-test:
-  imports:
-    - yfinance
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - yfinance
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
-  home: https://github.com/ranaroussi/yfinance
   summary: Download market data from Yahoo! Finance API
   license: Apache-2.0
   license_file: LICENSE.txt
+  homepage: https://github.com/ranaroussi/yfinance
 
 extra:
   recipe-maintainers:
