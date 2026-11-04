@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: yfinance
-  version: 1.7.0
+  version: 1.8.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/yfinance-${{ version }}.tar.gz
-  sha256: 442f780d13d3e52fefa6c721c2c9bfee321078c1987d6585ec193b5c24382f8a
+  sha256: ae8a00299de61e34e724c8a9c409028508fb999ec5ff526b4382d9011f8e922a
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -25,21 +25,16 @@ requirements:
   run:
     - protobuf >=3.19.0
     - websockets >=13.0
-    - curl-cffi >=0.15
+    - curl-cffi >=0.17
     - platformdirs >=2.0.0
     - python >=${{ python_min }}
     - pandas >=1.3.0
     - numpy >=1.16.5
     - requests >=2.31
-    - multitasking >=0.0.7
     - lxml >=4.9.0
-    - appdirs >=1.4.4
     - pytz >=2022.5
-    - frozendict >=2.3.4
     - peewee >=3.16.2
     - beautifulsoup4 >=4.11.1
-    - html5lib >=1.1
-
 tests:
   - python:
       imports:
@@ -47,7 +42,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
 
 about:
   summary: Download market data from Yahoo! Finance API
